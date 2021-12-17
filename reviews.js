@@ -36,42 +36,48 @@ const reviews = [
 ];
 
 
-//set inner html when DOM loads
-let index = 0;
 
-const snapshot = document.getElementById("snapshot"); 
-const person = document.getElementById("name"); 
-const jobtitle = document.getElementById("jobtitle"); 
-const review = document.getElementById("review"); 
+// select items
+const img = document.getElementById("person-img"); 
+const author = document.getElementById("author");
+const info = document.getElementById("info");
+const job = document.getElementById("job");
 
-function swapinfo () {
-  snapshot.src = reviews[index].img;
-  person.innerHTML = reviews[index].name;
-  jobtitle.innerHTML = reviews[index].job;
-  review.innerHTML = reviews[index].text;
+const prevBtn = document.querySelector(".prev-btn");
+const nxtBtn = document.querySelector(".next-btn");
+
+//set starting item 
+let currentItem = 0; 
+let person = reviews[currentItem];
+
+
+//load initial item
+window.addEventListener('DOMContentLoaded', function () {
+  showPerson(currentItem); 
+});
+
+
+//change image, author, job, and text
+function showPerson(currentItem){
+  
+  img.src = person.img;
+  author.textcontent = person.name;
+  info.textContent = person.text;
+  job.textContent = person.job
+ 
+};
+
+function next(currentItem){
+  if (currentItem < reviews.length ) {
+    currentItem ++;
+    showPerson(currentItem); 
   }
-
-next => {
-    if (index >= reviews.length) {
-        index = 0; 
-        swapinfo();
-    } else {
-        swapinfo();
-        index++; 
-    }
 }
 
-function last(){
-    if (index > 0 ) {
-        swapinfo();
-        index --;
-    } else {
-        index = reviews.length;
-        swapinfo();
-    }
+function prev(currentItem){
+  if (currentItem < 0) {
+    currentItem = (reviews.length -1);
+    showPerson(currentItem); 
+  }
+  return;
 }
-
-document.addEventListener('DOMContentLoaded', swapinfo);
-
-//let lbutton = document.getElementById('last-button').addEventListener("click", last());
-//let nbutton = document.getElementById('next-button').addEventListener("click", next);

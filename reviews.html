@@ -8,32 +8,37 @@
 <script src="reviews.js"></script>
 
 <body>
-
-    <div id="bodydiv" class="flex-container">
-        <h1>Our Reviews</h1>
-
-        <section class="contentsection">
-            <div class="snapshots">
-                <img src="person-1.jpeg" alt="snapshot" id="snapshot">
+    <main>
+        <section class="container">
+            <!--title-->
+            <div class="title">
+                <h2>our reviews</h2>
+                <div class = "underline"></div>
             </div>
-            
-            <div class="name">
-                <span id="name">Text</span>
-            </div>
-            <div class="jobtitle">
-            <span id="jobtitle">Text</span>
-            </div>
-            <div class="reviews">
-            <span id="review">Text</span>
-            </div>
+            <!--review-->
+            <article class="review">
+                <div class="img-containter">
+                    <img src="person-1.jpeg" id="person-img" alt="stock-photo">
+                </div>
+                <h4 id="author">sara jones</h4>
+                <p>ux designer</p>
+                <p id="info">
+                        Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                        Aut vel veritatis deserunt maxime obcaecati magnam fuga
+                        recusandae cum. Laboriosam eos totam vel cumque nemo 
+                        ex eum ducimus similique pariatur velit!
+                </p>
+                <!-- prev next buttons-->
+                <div class="button-container">
+                    <button class="prev-btn">
+                        <i class ="fas fa-chevron-left"></i>
+                    </button>
+                    <button class="prev-btn">
+                        <i class="fas fa-chevron-right">
+                    </button>
+                </div>
+            </article>
         </section>
-
-        <div id="button-section" class="button-section">
-            <button type="button" class="triangle-left" id='last-button'>Last</button>
-            <button type="button"  id="next-button">Next</button>
-        </div>
-        
-        <button type="button">Surprise me</button>
-    </div>
+    </main>
 </body>
 </html>
