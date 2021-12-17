@@ -43,41 +43,40 @@ const author = document.getElementById("author");
 const info = document.getElementById("info");
 const job = document.getElementById("job");
 
-const prevBtn = document.querySelector(".prev-btn");
+const prvBtn = document.querySelector(".prev-btn");
 const nxtBtn = document.querySelector(".next-btn");
 
 //set starting item 
 let currentItem = 0; 
-let person = reviews[currentItem];
 
 
 //load initial item
-window.addEventListener('DOMContentLoaded', function () {
+window.addEventListener("DOMContentLoaded", function () {
   showPerson(currentItem); 
 });
 
 
-//change image, author, job, and text
-function showPerson(currentItem){
-  
-  img.src = person.img;
-  author.textcontent = person.name;
-  info.textContent = person.text;
-  job.textContent = person.job
+//show person based on item 
+
+function showPerson(person){
+  const item = reviews[person];
+  img.src = item.img;// how TF is this undefined in the console? SFC
+  author.textcontent = item.name;
+  info.textContent = item.text;
+  job.textContent = item.job
  
 };
 
-function next(currentItem){
-  if (currentItem < reviews.length ) {
+nxtBtn.addEventListener('click', function (){
+  if (currentItem < reviews.length -1 ) {
     currentItem ++;
     showPerson(currentItem); 
   }
-}
+});
 
-function prev(currentItem){
+prvBtn.addEventListener('click', function (){
   if (currentItem < 0) {
     currentItem = (reviews.length -1);
     showPerson(currentItem); 
   }
-  return;
-}
+});
