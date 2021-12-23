@@ -1,4 +1,3 @@
-
 // local reviews data
 const reviews = [
   {
@@ -51,32 +50,36 @@ let currentItem = 0;
 
 
 //load initial item
-window.addEventListener("DOMContentLoaded", function () {
-  showPerson(currentItem); 
-});
+window.addEventListener("DOMContentLoaded", showPerson(currentItem));
 
 
 //show person based on item 
-
 function showPerson(person){
   const item = reviews[person];
-  img.src = item.img;// how TF is this undefined in the console? SFC
-  author.textcontent = item.name;
+  img.src = item.img;
+  author.innerHTML = item.name;
   info.textContent = item.text;
   job.textContent = item.job
- 
 };
 
+//next person
 nxtBtn.addEventListener('click', function (){
-  if (currentItem < reviews.length -1 ) {
-    currentItem ++;
+  if (currentItem < (reviews.length-1) ) {
+    currentItem++;
     showPerson(currentItem); 
+  } else { 
+    currentItem = 0;
+    showPerson(currentItem);
   }
 });
 
+//previous person
 prvBtn.addEventListener('click', function (){
-  if (currentItem < 0) {
+  if (currentItem <= 0) {
     currentItem = (reviews.length -1);
     showPerson(currentItem); 
+  } else {
+    currentItem--; 
+    showPerson(currentItem);
   }
 });
