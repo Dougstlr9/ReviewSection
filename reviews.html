@@ -3,10 +3,11 @@
 <meta charset="UTF-8">
 <title>Page Title</title>
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<link rel="stylesheet" href="">
-
-<script src="reviews.js"></script>
-
+<head>
+    <link rel="stylesheet" href="">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+    <link rel="stylesheet" href="reviews.css">
+</head>
 <body>
     <main>
         <section class="container">
@@ -21,7 +22,7 @@
                     <img src="person-1.jpeg" id="person-img" alt="stock-photo">
                 </div>
                 <h4 id="author">sara jones</h4>
-                <p>ux designer</p>
+                <p id="job">ux designer</p>
                 <p id="info">
                         Lorem ipsum dolor sit, amet consectetur adipisicing elit.
                         Aut vel veritatis deserunt maxime obcaecati magnam fuga
@@ -33,12 +34,14 @@
                     <button class="prev-btn">
                         <i class ="fas fa-chevron-left"></i>
                     </button>
-                    <button class="prev-btn">
-                        <i class="fas fa-chevron-right">
+                    <button class="next-btn">
+                        <i class="fas fa-chevron-right"></i>
                     </button>
                 </div>
             </article>
         </section>
     </main>
 </body>
+
+<script src="reviews.js"></script>
 </html>
